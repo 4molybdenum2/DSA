@@ -1,11 +1,11 @@
 #include<iostream>
 using namespace std;
 
-void InsertionSort(int arr[])
+void InsertionSort(int arr[],int m)
 {
     int i=0,j=0,k=0;
 
-    for(i=0;i<7;i++)
+    for(i=0;i<m;i++)
     {
         k=arr[i];
         j=i-1;
@@ -20,9 +20,17 @@ void InsertionSort(int arr[])
 
 int main()
 {
-     int arr[7]= {2,18,7,10,5,6,33};
-     InsertionSort(arr);
+    int n;
+    // Enter the size of array//
+    cout<<"Enter size of array "<<endl;
+    cin>>n;
+    int arr[n];
+    int i=0;
+    // Enter the values in array//
+    for(i=0;i<n;i++)
+    cin>>arr[i];
+     InsertionSort(arr,n);
      // Printing the sorted arrays
-     for(int i=0;i<7;i++)
+     for(int i=0;i<n;i++)
      cout<<arr[i]<<" ";
 }

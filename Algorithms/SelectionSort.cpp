@@ -1,13 +1,13 @@
 #include<iostream>
 using namespace std;
 
-void selectionSort(int a[])
+void selectionSort(int a[],int m)
 {
   int i=0,j=0,k=0;
-  for(i=0;i<7;i++)
+  for(i=0;i<m;i++)
   {
      int min =i;
-     for(j=i+1;j<7;j++)
+     for(j=i+1;j<m;j++)
      {
          if(a[j]<a[min])   // for sorting the array in descending oreder just replace '<' to '>''//
          {
@@ -26,10 +26,18 @@ void selectionSort(int a[])
 
 int main()
 {
-    int arr[7]={3,6,1,5,4,9,2};
+    int n;
+    // Enter the size of array//
+    cout<<"Enter size of array "<<endl;
+    cin>>n;
+    int arr[n];
     int i=0;
-    selectionSort(arr);
-    for(i=0;i<7;i++)
+    // Enter the values in array//
+    for(i=0;i<n;i++)
+    cin>>arr[i];
+
+    selectionSort(arr,n);
+    for(i=0;i<n;i++)
     {
         cout<<arr[i]<<" ";
     }
