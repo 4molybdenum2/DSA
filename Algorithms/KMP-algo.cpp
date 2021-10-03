@@ -1,5 +1,6 @@
+// fact:The time complexity of KMP algorithm is O(n) in the worst case.
+// the two portions of the algorithm have, respectively, complexities of O(k) and O(n), the complexity of the overall algorithm is O(n + k). So the total cost of a KMP search is linear in the number of characters of string and pattern
 #include <bits/stdc++.h>
-
 void computeLPSArray(char *pat, int M, int *lps)
 {
 
