@@ -52,13 +52,15 @@ void DijkstraAlgo(int graph[6][6],int src) // adjacency matrix
 
 int main()
 {
-    int graph[6][6]={
-        {0, 1, 2, 0, 0, 0},
-        {1, 0, 0, 5, 1, 0},
-        {2, 0, 0, 2, 3, 0},
-        {0, 5, 2, 0, 2, 2},
-        {0, 1, 3, 2, 0, 1},
-        {0, 0, 0, 2, 1, 0}};
+    int graph[6][6];
+    cout<<"enter elements for graph \n";
+    for(int i=0;i<6;i++)
+    {
+        for(int j=0;j<6;j++)
+        {
+            cin>>graph[i][j];
+        }
+    }
     DijkstraAlgo(graph,0);
     return 0;                           
 }
