@@ -47,21 +47,51 @@ void bucketSort(float arr[], int n, int no_buckets){
 }
 
 int main(){
-    //Example array :
-    float arr[10] = {1.32, 9.56, 12.89, 4.52, 0.12, 22.67, 55.61, 0.0, 1.01, 10.00};
+    //Test cases :
+    float arr1[10] = {1.32, 9.56, 12.89, 4.52, 0.12, 22.67, 55.61, 0.0, 1.01, 10.00};
+    float arr2[10] = {0.23, 7.56, 2.00, 7.02, 0.13, 19.67, 25.61, 0.10, 6.01, 0.55};
+    float arr3[10] = {56.32, 9.76, 5.89, 90.52, 0.12, 1.67, 4.7, 0.8, 1.0, 6.60};
 
-    cout<<"Unsorted Array :"<<endl;
+    cout<<"Unsorted Array1 :"<<endl;
     for(int i=0; i<10; i++){
-        cout<<arr[i]<<" ";
+        cout<<arr1[i]<<" ";
     }
 
-    bucketSort(arr, 10, 5);
-
-    cout<<"Sorted Array :"<<endl;
+    bucketSort(arr1, 10, 5);
+    cout<<endl;
+    cout<<"Sorted Array1 :"<<endl;
     for(int i=0; i<10; i++){
-        cout<<arr[i]<<" ";
+        cout<<arr1[i]<<" ";
     }
-    
+    cout<<endl<<endl;
+/////////////////////////
+
+    cout<<"Unsorted Array2 :"<<endl;
+    for(int i=0; i<10; i++){
+        cout<<arr2[i]<<" ";
+    }
+
+    bucketSort(arr2, 10, 5);
+    cout<<endl;
+    cout<<"Sorted Array2 :"<<endl;
+    for(int i=0; i<10; i++){
+        cout<<arr2[i]<<" ";
+    }
+/////////////////////////
+    cout<<endl<<endl;
+    cout<<"Unsorted Array3 :"<<endl;
+    for(int i=0; i<10; i++){
+        cout<<arr3[i]<<" ";
+    }
+
+    bucketSort(arr3, 10, 5);
+    cout<<endl;
+    cout<<"Sorted Array3 :"<<endl;
+    for(int i=0; i<10; i++){
+        cout<<arr3[i]<<" ";
+    }
+    cout<<endl<<endl;
+///////////////////////// 
     return 0;
 }
 /*

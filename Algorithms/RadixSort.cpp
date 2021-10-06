@@ -36,19 +36,51 @@ void radixSort(int arr[], int n){
 }
 
 int main(){
-    int arr[5] = {5, 10, 7, 64, 1};
+    //Test cases :
+    int arr1[5] = {5, 10, 7, 64, 1};
+    int arr2[5] = {6, 100, 1, 4, 0};
+    int arr3[5] = {23, 55, 11, 99, 88};
 
-    cout<<"Sorted Array :"<<endl;
+    cout<<"UnSorted Array1 :"<<endl;
     for(int i=0; i<5; i++){
-        cout<<arr[i]<<" ";
+        cout<<arr1[i]<<" ";
     }
 
-    radixSort(arr, 5);
+    radixSort(arr1, 5);
 
-    cout<<"\nSorted Array :"<<endl;
+    cout<<"\nSorted Array1 :"<<endl;
     for(int i=0; i<5; i++){
-        cout<<arr[i]<<" ";
+        cout<<arr1[i]<<" ";
     }
-    
+    cout<<endl<<endl;
+/////////////////////////
+
+    cout<<"UnSorted Array2 :"<<endl;
+    for(int i=0; i<5; i++){
+        cout<<arr2[i]<<" ";
+    }
+
+    radixSort(arr2, 5);
+
+    cout<<"\nSorted Array2 :"<<endl;
+    for(int i=0; i<5; i++){
+        cout<<arr2[i]<<" ";
+    }
+    cout<<endl<<endl;
+///////////////////////////
+
+    cout<<"UnSorted Array3 :"<<endl;
+    for(int i=0; i<5; i++){
+        cout<<arr3[i]<<" ";
+    }
+
+    radixSort(arr3, 5);
+
+    cout<<"\nSorted Array3 :"<<endl;
+    for(int i=0; i<5; i++){
+        cout<<arr3[i]<<" ";
+    }
+    cout<<endl<<endl;
+/////////////////////////// 
     return 0;
 }
