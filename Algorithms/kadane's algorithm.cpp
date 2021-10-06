@@ -4,7 +4,7 @@ using namespace std;
 int main(){
 int n;
 cin>>n;
-//assuming that empty sub-arrays are allowed as then the sum can be zero
+
 int a[100]={0};
 for(int i=0;i<n;i++){
     cin>>a[i];
