@@ -5,40 +5,42 @@
 
 using namespace std;
 
-void bucketSort(float arr[], int n){
+void bucketSort(float arr[], int n, int no_buckets){
 
     // Create n buckets (preferably 'vectors' because they are dynamically resizable) :
-    vector<float> bucket[n];
+    vector<float> bucket[no_buckets];
 
-    int max = *max_element(arr, arr+n);
-    int min = *min_element(arr, arr+n);
+    float max = *max_element(arr, arr+n);
+    float min = *min_element(arr, arr+n);
 
     //Range of buckets :
-    int range = (max - min)/range;
+    float range = (max - min)/(float)no_buckets;
 
     // Add each array elements in their respective buckets :
     for(int i=0; i<n; i++){
-        int diff = ((arr[i] - min)/range) - (int)((arr[i] - min)/range);
+        float diff = (float)(((arr[i] - min)/(max - min))*no_buckets) - (int)(((arr[i] - min)/(max - min))*no_buckets);
 
         if(diff == 0 && arr[i] != min){
-            bucket[(int)((arr[i] - min)/range) - 1].push_back(arr[i]);
+            bucket[(int)(((arr[i] - min)/(max - min))*no_buckets) - 1].push_back(arr[i]);
         }
         else{
-            bucket[(int)((arr[i] - min)/range)].push_back(arr[i]);
+            bucket[(int)(((arr[i] - min)/(max - min))*no_buckets)].push_back(arr[i]);
         }
     }
 
     //Sort each bucket : (with any sorting algorithm)
-    for(int i=0; i<n; i++){
-        if(bucket[i].size())
+    for(int i=0; i<no_buckets; i++){
+        if(bucket[i].size()!=0)
             sort(bucket[i].begin(), bucket[i].end());
     }
 
     // Adding sorted elements back into array from buckets 
     int index = 0;
-    for(int i=0; i<n; i++){
-        for(int j=0; j<bucket[i].size(); j++){
-            arr[index++] = bucket[i][j];
+    for(int i=0; i<no_buckets; i++){
+        if(bucket[i].size()!=0){
+            for(int j=0; j<bucket[i].size(); j++){
+                arr[index++] = bucket[i][j];
+            }
         }
     }
 
@@ -46,17 +48,17 @@ void bucketSort(float arr[], int n){
 
 int main(){
     //Example array :
-    float arr[5] = {1.32, 9.56, 12.89, 4.52, 0.12};
+    float arr[10] = {1.32, 9.56, 12.89, 4.52, 0.12, 22.67, 55.61, 0.0, 1.01, 10.00};
 
     cout<<"Unsorted Array :"<<endl;
-    for(int i=0; i<5; i++){
+    for(int i=0; i<10; i++){
         cout<<arr[i]<<" ";
     }
 
-    bucketSort(arr, 5);
+    bucketSort(arr, 10, 5);
 
-    cout<<"\nSorted Array :"<<endl;
-    for(int i=0; i<5; i++){
+    cout<<"Sorted Array :"<<endl;
+    for(int i=0; i<10; i++){
         cout<<arr[i]<<" ";
     }
     
