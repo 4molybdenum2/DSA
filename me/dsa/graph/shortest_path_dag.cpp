@@ -1,6 +1,5 @@
 // TODO:
 // need to fix code...causes segmentation fault
-
 #include <bits/stdc++.h>
 #define INF 1e14
 using namespace std;
@@ -15,7 +14,7 @@ void topoSort(int x, vector<int>& vis, vector<pair<int,int>> adj[] ,stack<int> &
 	s.push(x);	
 }
 
-void findShortestPath(int src, int dest, vector<pair<int,int>> adj[], int n){
+void findShortestPath(int src, vector<pair<int,int>> adj[], int n){
 	stack<int> s;
 	vector<int> vis(n+1, 0);
 	
@@ -59,5 +58,5 @@ int main() {
 		adj[u].push_back({v, cost});
 	}
 	
-	findShortestPath(0, n, adj, n);
+	findShortestPath(0, adj, n);
 }
