@@ -1,8 +1,7 @@
 // TODO:
 // need to fix code...causes segmentation fault
-
 #include <bits/stdc++.h>
-#define INF 1e9
+#define INF 1e14
 using namespace std;
 
 void topoSort(int x, vector<int>& vis, vector<pair<int,int>> adj[] ,stack<int> &s){
@@ -15,7 +14,7 @@ void topoSort(int x, vector<int>& vis, vector<pair<int,int>> adj[] ,stack<int> &
 	s.push(x);	
 }
 
-void findShortestPath(int src, int dest, vector<pair<int,int>> adj[], int n){
+void findShortestPath(int src, vector<pair<int,int>> adj[], int n){
 	stack<int> s;
 	vector<int> vis(n+1, 0);
 	
@@ -25,7 +24,7 @@ void findShortestPath(int src, int dest, vector<pair<int,int>> adj[], int n){
 		}
 	}
 	
-	vector<int> dist(n+1, 1e9);
+	vector<long long> dist(n+1, INF);
 	dist[src] = 0;
 	
 	while(!s.empty()){
@@ -42,7 +41,7 @@ void findShortestPath(int src, int dest, vector<pair<int,int>> adj[], int n){
 	}
 	
 	for(int i=0; i<n; i++){
-		(dist[i] == 1e9) ? cout << "INF" : cout << dist[i] << " ";
+		(dist[i] == INF) ? cout << "INF " : cout << dist[i] << " ";
 	}
 }
 
@@ -59,5 +58,5 @@ int main() {
 		adj[u].push_back({v, cost});
 	}
 	
-	findShortestPath(0, n, adj, n);
+	findShortestPath(0, adj, n);
 }
